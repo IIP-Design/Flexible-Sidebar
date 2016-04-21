@@ -1,0 +1,15 @@
+{
+    "name": "usstatedept/flexible-sidebar",
+    "type": "wordpress-plugin",
+    "description" : "Adds a customizable field to post and page edit screens that overwrites the global sidebar(s)",
+    "authors": [
+        {
+            "name": "Office of Design, U.S. Department of State",
+            "email": "kleekampnf@america.gov"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+       "composer/installers": "~1.0"
+    }
+}
