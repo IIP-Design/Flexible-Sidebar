@@ -94,9 +94,14 @@ function america_add_local_field_group() {
   		),
   		array (
   			array (
-  				'param' => 'post_type',
-  				'operator' => '==',
-  				'value' => 'page',
+  				'param' => 'page_template',
+  				'operator' => '!=',
+  				'value' => 'page-templates/page_Front-style-one.php',
+  			),
+  			array (
+  				'param' => 'page_template',
+  				'operator' => '!=',
+  				'value' => 'page-templates/page_full.php',
   			),
   		),
   	),
