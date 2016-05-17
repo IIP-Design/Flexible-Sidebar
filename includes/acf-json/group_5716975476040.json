@@ -1,0 +1,94 @@
+{
+    "key": "group_5716975476040",
+    "title": "Flexible Sidebar",
+    "fields": [
+        {
+            "key": "field_5716975e65c1d",
+            "label": "Sidebar",
+            "name": "america_sidebar",
+            "type": "flexible_content",
+            "instructions": "Replace the default sidebar with a custom sidebar on this page or post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Sidebar",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "57176b5e3cd34",
+                    "name": "html",
+                    "label": "HTML",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_57176b83aff6d",
+                            "label": "HTML Markup",
+                            "name": "america_markup",
+                            "type": "wysiwyg",
+                            "instructions": "Add your sidebar markup or WordPress shortcode here",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-templates\/page_Front-style-one.php"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-templates\/page_full.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "custom_fields",
+        "discussion",
+        "comments",
+        "slug",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1463502860
+}
