@@ -127,7 +127,7 @@ class America_Flexible_Sidebar {
 		});
 
 		// Hide Advanced Custom Fields from Wordpress Admin Menu
-		add_filter('acf/settings/show_admin', '__return_false');
+		// add_filter('acf/settings/show_admin', '__return_false');
 
 		$this->loader = new America_Flexible_Sidebar_Loader();
 	}

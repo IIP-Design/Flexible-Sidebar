@@ -23,4 +23,8 @@
 	* @author     Office of Design, U.S. Department of State
 	*/
 
-class America_Flexible_Sidebar_Deactivator {}
+class America_Flexible_Sidebar_Deactivator {
+	public function deactivate() {
+
+	}
+}

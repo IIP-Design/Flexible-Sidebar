@@ -23,4 +23,8 @@
   * @author     Office of Design, U.S. Department of State
   */
 
-class America_Flexible_Sidebar_Activator {}
+class America_Flexible_Sidebar_Activator {
+  public function activate() {
+    
+  }
+}
