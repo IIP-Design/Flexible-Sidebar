@@ -14,7 +14,11 @@ The America Flexible Sidebar makes use of the [Gamajo Template Loader](https://g
 
 To do so, create a directory in your theme called `america-flexible-sidebar-templates` and place a `sidebar.php` template within that directory.
 
-### Manually
+#### Available filters
+
+Currently there's only one filter available: `america_sidebar_deregister`, which allows you to augment the list of sidebars to deactivate in `public/class-america-flexible-sidebar-public.php`.
+
+### Manual output
 
 If you don't use the THA action hooks, you can also add something like the following to output to a template, like `your-theme/sidebar.php`:
 
@@ -39,6 +43,11 @@ If you don't use the THA action hooks, you can also add something like the follo
 
 *NOTE*: If you use the manual method above, you'll be sidestepping the Gamajo Template Loader.
 
-## Available filters
 
-Currently there's only one filter available: `america_sidebar_deregister`, which allows you to augment the list of sidebars to deactivate in `public/class-america-flexible-sidebar-public.php`.
+## Development: Updating the Flexible Sidebar ACF field
+
+The ACF field is defined in `includes/acf-json/group_5716975476040.json` (read more about [ACF Local JSON](https://www.advancedcustomfields.com/resources/local-json/) fields). As of ACF version `5.3.2.2` it is not possible to automatically sync fields stored as JSON with ACF.
+
+To accomplish automatic syncing, we use the [ACF Sync](https://github.com/FreshFlesh/acf-sync) plugin. It requires a global constant called `ACF_FIELDS_VERSION`, which you can find in `america-flexible-sidebar.php`.
+
+**Anytime you update the field, you have to bump the `ACF_FIELDS_VERSION` constant or ACF Sync will not see the change.**
