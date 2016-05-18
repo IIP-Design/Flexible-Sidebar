@@ -122,12 +122,12 @@ class America_Flexible_Sidebar {
 
 		add_filter( 'acf/settings/load_json', function( $paths ) {
 			unset($paths[0]);
-		  $paths[] = plugin_dir_url( dirname( __FILE__ ) ) . 'includes/acf-json';
+		  $paths[] = plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf-json';
 		  return $paths;
 		});
 
 		// Hide Advanced Custom Fields from Wordpress Admin Menu
-		// add_filter('acf/settings/show_admin', '__return_false');
+		add_filter('acf/settings/show_admin', '__return_false');
 
 		$this->loader = new America_Flexible_Sidebar_Loader();
 	}

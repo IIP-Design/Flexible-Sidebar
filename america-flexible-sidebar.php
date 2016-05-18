@@ -17,6 +17,9 @@ if ( ! defined( 'WPINC' ) ) {
 
 define('AMERICA_FLEXIBLE_SIDEBAR_DIR', plugin_dir_path( dirname( __FILE__ ) ) . 'america-flexible-sidebar/' );
 
+// For the ACF Sync plugin
+define('ACF_FIELDS_VERSION', '2.0.0');
+
 
 // Activate
 function activate_america_flexible_sidebar() {
