@@ -46,8 +46,4 @@ If you don't use the THA action hooks, you can also add something like the follo
 
 ## Development: Updating the Flexible Sidebar ACF field
 
-The ACF field is defined in `includes/acf-json/group_5716975476040.json` (read more about [ACF Local JSON](https://www.advancedcustomfields.com/resources/local-json/) fields). As of ACF version `5.3.2.2` it is not possible to automatically sync fields stored as JSON with ACF.
-
-To accomplish automatic syncing, we use the [ACF Sync](https://github.com/FreshFlesh/acf-sync) plugin. It requires a global constant called `ACF_FIELDS_VERSION`, which you can find in `america-flexible-sidebar.php`.
-
-**Anytime you update the field, you have to bump the `ACF_FIELDS_VERSION` constant or ACF Sync will not see the change.**
+The ACF field is defined in `includes/acf-json/group_5716975476040.json` (read more about [ACF Local JSON](https://www.advancedcustomfields.com/resources/local-json/) fields).
