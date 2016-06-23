@@ -17,7 +17,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 // Constants
-define('AMERICA_FLEXIBLE_SIDEBAR_DIR', plugin_dir_path( dirname( __FILE__ ) ) . 'america-flexible-sidebar/' );
+define( 'AMERICA_FLEXIBLE_SIDEBAR_DIR', plugin_dir_path( dirname( __FILE__ ) ) . 'america-flexible-sidebar/' );
+define( 'AMERICA_FLEXIBLE_SIDEBAR_URL', plugin_dir_url( dirname( __FILE__ ) ) . 'america-flexible-sidebar/' );
 
 
 // Activate
