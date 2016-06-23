@@ -79,6 +79,7 @@ class America_Flexible_Sidebar {
 	public function __construct() {
 		$this->plugin_name = 'america-flexible-sidebar';
 		$this->version = '2.0.4';
+
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_public_hooks();
@@ -96,33 +97,34 @@ class America_Flexible_Sidebar {
 		*/
 
 	private function load_dependencies() {
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-america-flexible-sidebar-loader.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-america-flexible-sidebar-i18n.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-gamajo-template-loader.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flexible-sidebar-template-loader.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-america-flexible-sidebar-public.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/advanced-custom-fields/acf.php';
+		require_once AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/class-america-flexible-sidebar-loader.php';
+		require_once AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/class-america-flexible-sidebar-i18n.php';
+		require_once AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/class-gamajo-template-loader.php';
+		require_once AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/class-flexible-sidebar-template-loader.php';
+		require_once AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/advanced-custom-fields/acf.php';
+		require_once AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/class-america-flexible-sidebar-widgets.php';
+		require_once AMERICA_FLEXIBLE_SIDEBAR_DIR . 'public/class-america-flexible-sidebar-public.php';
 
 		/**
 			* Custom settings for Advanced Custom Fields
 			*/
 
 		add_filter( 'acf/settings/path', function() {
-			return plugin_dir_path( dirname( __FILE__ ) ) . 'includes/advanced-custom-fields/';
+			return AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/advanced-custom-fields/';
 		});
 
 		add_filter( 'acf/settings/dir', function() {
-			return plugin_dir_url( dirname( __FILE__ ) ) . 'includes/advanced-custom-fields/';
+			return AMERICA_FLEXIBLE_SIDEBAR_URL . 'includes/advanced-custom-fields/';
 		});
 
 		add_filter( 'acf/settings/save_json', function( $path ) {
-			$path = plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf-json';
+			$path = AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/acf-json';
 			return $path;
 		});
 
 		add_filter( 'acf/settings/load_json', function( $paths ) {
 			unset($paths[0]);
-		  $paths[] = plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf-json';
+		  $paths[] = AMERICA_FLEXIBLE_SIDEBAR_DIR . 'includes/acf-json';
 		  return $paths;
 		});
 
@@ -159,6 +161,9 @@ class America_Flexible_Sidebar {
 
 	private function define_public_hooks() {
 		$plugin_public = new America_Flexible_Sidebar_Public( $this->get_america_flexible_sidebar(), $this->get_version() );
+		$this->loader->add_action( 'widgets_init', $plugin_public, 'register_widget' );
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'set_registered_sidebars' );
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'set_registered_widgets' );
 		$this->loader->add_action( 'tha_sidebars_before', $plugin_public, 'america_flexible_sidebar_activate' );
 	}
 
@@ -171,6 +176,19 @@ class America_Flexible_Sidebar {
 
 	public function run() {
 		$this->loader->run();
+	}
+
+
+	/**
+		* The name of the plugin used to uniquely identify it within the context of
+		* WordPress and to define internationalization functionality.
+		*
+		* @since     1.0.0
+		* @return    string    The name of the plugin.
+		*/
+
+	public function get_plugin_name() {
+		return $this->plugin_name;
 	}
 
 
