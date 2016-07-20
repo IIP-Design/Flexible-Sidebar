@@ -107,7 +107,7 @@ class America_Promoted_Links_Widget extends WP_Widget {
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 			</p>
       <p>
-        <label for="<?php echo esc_attr( ( $this->get_field_id( 'count' ) ) ); ?>"><?php _e( esc_attr( 'Number of Posts to Display', 'america' ) );?></label>
+        <label for="<?php echo esc_attr( ( $this->get_field_id( 'count' ) ) ); ?>"><?php _e( esc_attr( 'Number of items to display', 'america' ) );?></label>
         <input id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>" type="number" value="<?php echo esc_attr( $count ); ?>">
       </p>
 
