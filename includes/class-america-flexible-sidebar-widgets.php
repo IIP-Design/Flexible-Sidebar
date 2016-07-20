@@ -57,6 +57,10 @@ class America_Promoted_Links_Widget extends WP_Widget {
 			return;
 		}
 
+    $count = $instance['count'];
+
+    $posts = array_slice( $posts, 0, $length=$count );
+
 		$html = $args['before_widget'];
 
 		if ( ! empty( $instance['title'] ) ) {
@@ -95,12 +99,19 @@ class America_Promoted_Links_Widget extends WP_Widget {
 		*/
 
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'america' ); ?>
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'america' );
+    $count = ! empty( $instance['count'] ) ? $instance['count'] : 15; ?>
+
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( esc_attr( 'Title:' ) ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( esc_attr( 'Title:', 'america' ) ); ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 			</p>
-		<?php
+      <p>
+        <label for="<?php echo esc_attr( ( $this->get_field_id( 'count' ) ) ); ?>"><?php _e( esc_attr( 'Number of Posts to Display', 'america' ) );?></label>
+        <input id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>" type="number" value="<?php echo esc_attr( $count ); ?>">
+      </p>
+
+    <?php
 	}
 
 
@@ -119,6 +130,7 @@ class America_Promoted_Links_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['count'] = ( ! empty( $new_instance['count'] ) ) ? strip_tags( $new_instance['count'] ) : '';
 
 		return $instance;
 	}
@@ -181,7 +193,8 @@ class America_Promoted_Links_Widget extends WP_Widget {
 						'field' => 'slug',
 						'terms' => array( "post-format-link" ),
 					),
-				)
+        ),
+        'posts_per_page' => 15,
 			);
 
 			// Merge the query results at each iteration with the $posts array to keep the array flat for easier manipulation
