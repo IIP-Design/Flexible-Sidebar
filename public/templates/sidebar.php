@@ -38,6 +38,5 @@
       </section>
 
     <?php endwhile; ?>
-    <?php tha_sidebar_bottom(); ?>
-  </aside>
-</div><!-- .content-sidebar-wrap -->
+  <?php tha_sidebar_bottom(); ?>
+</aside>
