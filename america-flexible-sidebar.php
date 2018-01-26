@@ -3,7 +3,7 @@
 /**********************************************************************************************************
 Plugin Name:    America Flexible Sidebar
 Description:    Adds a customizable field to post and page edit screens that overwrites the global sidebar(s)
-Version:        3.2.0
+Version:        3.2.1
 Author:         Office of Design, U.S. Department of State
 License:        MIT
 Text Domain:    america
