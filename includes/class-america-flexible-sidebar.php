@@ -78,7 +78,7 @@ class America_Flexible_Sidebar {
 
 	public function __construct() {
 		$this->plugin_name = 'america-flexible-sidebar';
-		$this->version = '3.2.0';
+		$this->version = '3.2.2';
 
 		$this->load_dependencies();
 		$this->set_locale();
