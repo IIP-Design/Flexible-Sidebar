@@ -1,7 +1,7 @@
 <?php
 
 /**
-  * The default sidebar template. Can be overriden by placing another template
+  * The default sidebar template. Can be overridden by placing another template
   * file in 'your/theme/america-flexible-sidebar-templates/sidebar.php'
   *
   * @todo Move the logic out of the template

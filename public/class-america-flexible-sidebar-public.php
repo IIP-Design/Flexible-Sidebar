@@ -156,7 +156,7 @@ class America_Flexible_Sidebar_Public {
 		*/
 
 	public function register_widget() {
-		register_widget( America_Promoted_Links_Widget );
+		register_widget( 'America_Promoted_Links_Widget' );
 	}
 
 
