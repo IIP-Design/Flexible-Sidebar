@@ -1,3 +1,7 @@
+# :warning: THIS REPO HAS BEEN ARCHIVED :warning:
+
+This repository contains a custom plugin for WordPress sites formerly under the america.gov domain. Theses sites were transitioned to another team for maintenance in October 2020. As such, this repository has been archived and is no longer being maintained. The code is preserved here as a reference.
+
 # America Flexible Sidebar
 
 The America Flexible Sidebar plugin allows content editors to override global sidebars with page or post specific sidebars. Currently, it only provides a HTML field via the [Advanced Custom Fields](https://www.advancedcustomfields.com) plugin.
@@ -41,8 +45,7 @@ If you don't use the THA action hooks, you can also add something like the follo
 ?>
 ```
 
-*NOTE*: If you use the manual method above, you'll be sidestepping the Gamajo Template Loader.
-
+_NOTE_: If you use the manual method above, you'll be sidestepping the Gamajo Template Loader.
 
 ## Development: Updating the Flexible Sidebar ACF field
 
